@@ -4,7 +4,8 @@ Changelog
 0.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Update debian build scripts.
+  [bsuttor]
 
 
 0.1 (2014-10-10)
