@@ -1,0 +1,29 @@
+#!/usr/bin/make
+#
+all: run
+
+.PHONY: bootstrap
+bootstrap:
+	if ! test -f bootstrap.py;then http://downloads.buildout.org/2/bootstrap.py;fi
+	if ! test -f bin/python;then virtualenv-2.7 .;fi
+	if ! test -f buildout.cfg;then ln -s prod.cfg buildout.cfg;fi
+	./bin/python bootstrap.py
+
+.PHONY: buildout
+buildout:
+	if ! test -f bin/buildout;then make bootstrap;fi
+	bin/buildout -Nt 5
+
+.PHONY: dev-install
+dev-install:
+	if ! test -f buildout.cfg;then ln -s dev.cfg buildout.cfg;fi
+	make buildout
+
+.PHONY: run
+run:
+	if ! test -f bin/instance1;then make buildout;fi
+	bin/instance1 fg
+
+.PHONY: cleanall
+cleanall:
+	rm -fr develop-eggs downloads eggs parts .installed.cfg lib include bin buildout.cfg .mr.developer.cfg

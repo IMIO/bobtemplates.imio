@@ -1,0 +1,34 @@
+=====
+Intro
+=====
+
+Buildout used to {{{buildout.name}}} municipality website
+
+
+Dev instalation
+---------------
+
+For installing it on dev, use ::
+
+    $ git clone git@github.com:IMIO/buildout.{{{buildout.name}}}.git
+    $ cd buildout.{{{buildout.name}}}
+    $ make dev-install
+    
+And for runing Plone ::
+
+    $ ./bin/instance1 fg
+
+    OR
+
+    $ make run
+    
+
+Data
+----
+
+You can get data and blob from dev server with these commands (after installation)  ::
+
+    $ ./bin/rsync-datafs
+    $ ./bin/rsync-blobstorage
+    
+  

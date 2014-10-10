@@ -1,0 +1,3 @@
+graft {{{ package.namespace }}}
+graft docs/
+include *.rst *.in

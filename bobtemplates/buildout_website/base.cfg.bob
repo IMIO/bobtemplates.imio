@@ -1,0 +1,13 @@
+[buildout]
+eggs += 
+    {{{buildout.name}}}.policy    
+
+zcml +=
+    {{{buildout.name}}}.policy
+
+
+[website]
+id = {{{buildout.name}}}
+
+[versions]
+{{{buildout.name}}}.policy = 1.0

@@ -1,0 +1,15 @@
+[buildout]
+extends = 
+    https://raw.githubusercontent.com/IMIO/buildout.website/{{{buildout.mutualversion}}}/migration.cfg
+    base.cfg
+
+[instance1]
+eggs +=
+    cpskin.migration
+
+zcml +=
+    cpskin.migration
+
+[sources]
+cpskin.migration = git git@github.com:IMIO/cpskin.migration.git
+acptheme.cpskin3 = svn http://svn.communesplone.org/svn/communesplone/acptheme.cpskin3/trunk/

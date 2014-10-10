@@ -1,0 +1,16 @@
+====================
+{{{ package.namespace }}}.{{{ package.name }}}
+====================
+This package install {{{ package.name }}} policy.
+
+Install ::
+
+    make install
+
+Run ::
+
+    make run
+
+Test ::
+
+    make test

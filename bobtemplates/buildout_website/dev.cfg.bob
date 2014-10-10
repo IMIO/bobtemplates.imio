@@ -1,0 +1,26 @@
+[buildout]
+extends = 
+    https://raw.githubusercontent.com/IMIO/buildout.website/{{{buildout.mutualversion}}}/dev.cfg
+    base.cfg
+
+parts +=
+    rsync-datafs
+    rsync-blobstorage
+
+server = zope@srv-test.imio.be
+instance_path = /srv/instances/{{{buildout.name}}}.communesplone.be/
+
+[sources]
+Products.directory = git git@github.com:IMIO/Products.directory.git branch=plone43
+diazotheme.frameworks = git https://github.com/RedTurtle/diazotheme.frameworks.git
+cpskin.core = git git@github.com:IMIO/cpskin.core.git
+cpskin.locales = git git@github.com:IMIO/cpskin.locales.git
+cpskin.menu = git git@github.com:IMIO/cpskin.menu.git
+cpskin.slider = git git@github.com:IMIO/cpskin.slider.git
+cpskin.theme = git git@github.com:IMIO/cpskin.theme.git
+cpskin.workflow = git git@github.com:IMIO/cpskin.workflow.git
+cpskin.policy = git git@github.com:IMIO/cpskin.policy.git
+cpskin.minisite = git git@github.com:IMIO/cpskin.minisite.git
+affinitic.caching = git https://github.com/affinitic/affinitic.caching.git
+
+[versions]

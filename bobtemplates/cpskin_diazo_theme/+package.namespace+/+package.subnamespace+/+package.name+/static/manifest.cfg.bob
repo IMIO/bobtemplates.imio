@@ -1,0 +1,10 @@
+[theme]
+title = {{{ diazo.title }}}
+description = {{{ diazo.description }}}
+rules = /++theme++{{{ package.namespace }}}.{{{ package.subnamespace }}}.{{{ package.name }}}/rules.xml
+prefix = /++theme++{{{ package.namespace }}}.{{{ package.subnamespace }}}.{{{ package.name }}}
+preview = preview.png
+
+[theme:parameters]
+globalnavsetting = python: 'always'
+isinminisitemode = context/@@isInMinisiteMode
