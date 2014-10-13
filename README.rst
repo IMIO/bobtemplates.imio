@@ -23,7 +23,7 @@ Create your package
 
 ::
 
-  bin/mrbob -O collective.foo bobtemplates:cpskin_diazo_theme
+  bin/mrbob -O cpskin.diazotheme.theme1 bobtemplates:cpskin_diazo_theme
 
 
 Create your deb
