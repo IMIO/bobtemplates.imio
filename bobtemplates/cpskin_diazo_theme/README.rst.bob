@@ -11,11 +11,11 @@ Add this to your buildout.cfg, or do something equivalent
 
 ::
 
-    develop += src/cpskin.diazotheme.thirdtheme
+    develop += src/{{{ package.namespace }}}.{{{ package.subnamespace }}}.{{{ package.name }}}
     
     [instance]
-    eggs += cpskin.diazotheme.thirdtheme
-    zcml += cpskin.diazotheme.thirdtheme
+    eggs += {{{ package.namespace }}}.{{{ package.subnamespace }}}.{{{ package.name }}}
+    zcml += {{{ package.namespace }}}.{{{ package.subnamespace }}}.{{{ package.name }}}
 
 Install the package in the quickinstaller
 
