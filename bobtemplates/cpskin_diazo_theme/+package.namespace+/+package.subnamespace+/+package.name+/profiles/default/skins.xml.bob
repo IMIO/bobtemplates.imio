@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<object name="portal_skins"
+        allow_any="False"
+        cookie_persistence="False"
+        default_skin="{{{ package.name }}} theme">
+
+    <object name="{{{ package.name }}}_images"
+            meta_type="Filesystem Directory View"
+            directory="{{{ package.namespace }}}.{{{ package.subnamespace }}}.{{{ package.name }}}:skins/{{{ package.name }}}_images"/>
+
+ <skin-path name="{{{ package.name }}} theme"
+            based-on="Sunburst Theme">
+    <layer name="{{{ package.name }}}_images"
+           insert-after="custom"/>
+ </skin-path>
+
+</object>
