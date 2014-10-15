@@ -20,3 +20,8 @@ Package: imio-{{{ debian.name }}}-instance
 Architecture: any
 Depends: imio-{{{ debian.name }}}-core (= ${binary:Version}), memcached
 Description: IMIO Plone 4 site
+
+Package: imio-{{{ debian.name }}}-instance-debug
+Architecture: any
+Depends: imio-{{{ debian.name }}}-core (= ${binary:Version}), memcached
+Description: IMIO Plone 4 debug site
