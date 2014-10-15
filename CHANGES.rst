@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.1.2 (unreleased)
+0.1.2 (2014-10-15)
 ------------------
 
 - cpskin_diazo_theme template : Fixes and improvements
