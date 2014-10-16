@@ -1,4 +1,4 @@
-Source: imio-{{{ debian.name }}}
+Source: imio-{{{ debian.name }}}-website
 Section: web
 Priority: extra
 Maintainer: Jean-François Roche <jfroche@affinitic.be>
@@ -6,22 +6,22 @@ Build-Depends: debhelper (>= 7), python27 (>= 2.7.8-3)
 Standards-Version: 3.8.3
 Homepage: http://www.imio.be
 
-Package: imio-{{{ debian.name }}}-core
+Package: imio-{{{ debian.name }}}-website-core
 Architecture: any
 Depends: ${shlibs:Depends}, python27 (>= 2.7.8-3)
 Description: IMIO Plone 4 site
 
-Package: imio-{{{ debian.name }}}-zeoserver
+Package: imio-{{{ debian.name }}}-website-zeoserver
 Architecture: any
-Depends: imio-{{{ debian.name }}}-core (= ${binary:Version})
+Depends: imio-{{{ debian.name }}}-website-core (= ${binary:Version})
 Description: IMIO Plone 4 site
 
-Package: imio-{{{ debian.name }}}-instance
+Package: imio-{{{ debian.name }}}-website-instance
 Architecture: any
-Depends: imio-{{{ debian.name }}}-core (= ${binary:Version}), memcached
+Depends: imio-{{{ debian.name }}}-website-core (= ${binary:Version}), memcached
 Description: IMIO Plone 4 site
 
-Package: imio-{{{ debian.name }}}-instance-debug
+Package: imio-{{{ debian.name }}}-website-instance-debug
 Architecture: any
-Depends: imio-{{{ debian.name }}}-core (= ${binary:Version}), memcached
+Depends: imio-{{{ debian.name }}}-website-core (= ${binary:Version}), memcached
 Description: IMIO Plone 4 debug site

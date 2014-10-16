@@ -1,4 +1,4 @@
-imio-website (0.0-1) stable; urgency=low
+imio-{{{ debian.name }}}-website (0.0-1) stable; urgency=low
 
   * Initial import
 

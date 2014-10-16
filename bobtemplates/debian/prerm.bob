@@ -2,7 +2,7 @@
 
 set -e
 
-PACKAGE="imio-{{{ debian.name }}}"
+PACKAGE="imio-{{{ debian.name }}}-website"
 
 
 case "$1" in

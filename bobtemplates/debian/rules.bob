@@ -8,7 +8,7 @@
 export DH_OPTIONS
 
 INSTANCECOUNT := 1
-PACKAGE	  := imio-{{{ debian.name }}}
+PACKAGE	  := imio-{{{ debian.name }}}-website
 CURDIR    := $(shell pwd)
 BUILDDIR  := $(CURDIR)/tmp/$(PACKAGE)
 DEBIANCORE    := $(CURDIR)/debian/$(PACKAGE)-core

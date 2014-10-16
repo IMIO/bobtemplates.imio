@@ -1,19 +1,16 @@
 #!/bin/sh
-
+set -x
 set -e
 
-PACKAGE="imio-{{{ debian.name }}}"
+PACKAGE="imio-{{{ debian.name }}}-website"
 PACKAGE_HOME="/home/imio/$PACKAGE"
-
-export CLIENT_HOME="$PACKAGE_HOME/var/instance"
 
 case "$1" in
     configure)
 	# create var
 	/bin/chown -R imio.imio $PACKAGE_HOME
-	/usr/bin/find $PACKAGE_HOME -name '*.pyc' -delete
-	/usr/bin/find $PACKAGE_HOME -name '*.pyo' -delete
-	/usr/bin/find $PACKAGE_HOME -name '*.mo' -delete
+	/bin/chmod 0700 $PACKAGE_HOME/var/blobstorage
+	/bin/chmod 0700 $PACKAGE_HOME/var/filestorage
     ;;
 
     abort-remove|abort-upgrade|abort-deconfigure)
