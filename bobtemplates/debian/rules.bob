@@ -56,8 +56,8 @@ install-base:
 	rm -fr ${BUILDDIR}/downloads
 
 install-core:
-	mkdir -p $(DEBIANCORE)/home/imio/imio-website
-	mkdir -p $(DEBIANCORE)/home/imio/imio-website/parts
+	mkdir -p $(DEBIANCORE)${INSTALLDIR}
+	mkdir -p $(DEBIANCORE)${INSTALLDIR}/parts
 	find ${BUILDDIR}/bin -executable -type f -exec sed -i s%${BUILDDIR}%${INSTALLDIR}%g {} \;
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/bin/instance1
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/parts/instance1/bin/interpreter
@@ -81,7 +81,7 @@ install-core:
 	find $(DEBIANCORE)/${INSTALLDIR} -name "*.pyo" -delete;
 
 install-zeo:
-	mkdir -p $(DEBIANZEO)/home/imio/imio-website
+	mkdir -p $(DEBIANZEO)${INSTALLDIR}
 	mkdir -p $(DEBIANZEO)/${INSTALLDIR}/bin
 	mkdir -p $(DEBIANZEO)/${INSTALLDIR}/parts
 	mkdir -p $(DEBIANZEO)/${INSTALLDIR}/var/zeo
