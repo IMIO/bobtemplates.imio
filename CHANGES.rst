@@ -4,19 +4,24 @@ Changelog
 0.1.7 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Refactoring, use installdir instead of hard coded variable
+  [bsuttor]
 
 
 0.1.6 (2014-10-29)
 ------------------
 
 - Change bad path error.
+  [bsuttor]
+
 
 
 0.1.4 (2014-10-29)
 ------------------
 
 - Update debian templates: home container website folder is now generic
+  [bsuttor]
+
 
 
 0.1.3 (2014-10-16)
