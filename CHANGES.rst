@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.1.4 (unreleased)
+0.1.4 (2014-10-29)
 ------------------
 
 - Update debian templates: home container website folder is now generic
