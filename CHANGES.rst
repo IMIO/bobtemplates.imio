@@ -3,6 +3,9 @@ Changelog
 
 0.1.7 (unreleased)
 ------------------
+- Update post pre init path scripts
+  [bsuttor]
+
 
 - Refactoring, use installdir instead of hard coded variable
   [bsuttor]
