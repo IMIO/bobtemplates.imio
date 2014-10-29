@@ -10,7 +10,7 @@ export DH_OPTIONS
 INSTANCECOUNT := 1
 PACKAGE	  := imio-{{{ debian.name }}}-website
 CURDIR    := $(shell pwd)
-BUILDDIR  := $(CURDIR)/tmp/$(PACKAGE)
+BUILDDIR  := $(CURDIR)/tmp/imio-website
 DEBIANCORE    := $(CURDIR)/debian/$(PACKAGE)-core
 DEBIANINSTANCE    := $(CURDIR)/debian/$(PACKAGE)-instance
 DEBIANINSTANCEDEBUG    := $(CURDIR)/debian/$(PACKAGE)-instance-debug
@@ -56,8 +56,8 @@ install-base:
 	rm -fr ${BUILDDIR}/downloads
 
 install-core:
-	mkdir -p $(DEBIANCORE)/home/imio/$(PACKAGE)
-	mkdir -p $(DEBIANCORE)/home/imio/$(PACKAGE)/parts
+	mkdir -p $(DEBIANCORE)/home/imio/imio-website
+	mkdir -p $(DEBIANCORE)/home/imio/imio-website/parts
 	find ${BUILDDIR}/bin -executable -type f -exec sed -i s%${BUILDDIR}%${INSTALLDIR}%g {} \;
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/bin/instance1
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/parts/instance1/bin/interpreter
@@ -81,7 +81,7 @@ install-core:
 	find $(DEBIANCORE)/${INSTALLDIR} -name "*.pyo" -delete;
 
 install-zeo:
-	mkdir -p $(DEBIANZEO)/home/imio/$(PACKAGE)
+	mkdir -p $(DEBIANZEO)/home/imio/imio-website
 	mkdir -p $(DEBIANZEO)/${INSTALLDIR}/bin
 	mkdir -p $(DEBIANZEO)/${INSTALLDIR}/parts
 	mkdir -p $(DEBIANZEO)/${INSTALLDIR}/var/zeo
