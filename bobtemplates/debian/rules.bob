@@ -15,7 +15,7 @@ DEBIANCORE    := $(CURDIR)/debian/$(PACKAGE)-core
 DEBIANINSTANCE    := $(CURDIR)/debian/$(PACKAGE)-instance
 DEBIANINSTANCEDEBUG    := $(CURDIR)/debian/$(PACKAGE)-instance-debug
 DEBIANZEO    := $(CURDIR)/debian/$(PACKAGE)-zeoserver
-INSTALLDIR   := /home/imio/$(PACKAGE)
+INSTALLDIR   := /home/imio/imio-website
 
 distribution := $(shell lsb_release -is)
 
