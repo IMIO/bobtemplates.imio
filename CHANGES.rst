@@ -4,7 +4,7 @@ Changelog
 0.1.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Update debian templates: home container website folder is now generic
 
 
 0.1.3 (2014-10-16)
