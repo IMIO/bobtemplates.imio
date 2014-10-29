@@ -3,7 +3,7 @@
 set -e
 
 PACKAGE="imio-{{{ debian.name }}}-website"
-PACKAGE_HOME="/home/imio/$PACKAGE"
+PACKAGE_HOME="/home/imio/imio-website"
 
 export CLIENT_HOME="$PACKAGE_HOME/var/instance"
 

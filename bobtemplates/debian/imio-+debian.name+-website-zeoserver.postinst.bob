@@ -3,7 +3,7 @@ set -x
 set -e
 
 PACKAGE="imio-{{{ debian.name }}}-website"
-PACKAGE_HOME="/home/imio/$PACKAGE"
+PACKAGE_HOME="/home/imio/imio-website"
 
 case "$1" in
     configure)

@@ -14,7 +14,7 @@ case $1 in
   stop)
 
     su - imio -m -c \
-      "/home/imio/imio-{{{ debian.name }}}-website/bin/instance $*" \
+      "/home/imio/imio-website/bin/instance $*" \
       </dev/null
 
     ;;
@@ -28,7 +28,7 @@ case $1 in
   *)
 
     su - imio -m -c \
-      "/home/imio/imio-{{{ debian.name }}}-website/bin/instance $*" \
+      "/home/imio/imio-website/bin/instance $*" \
        </dev/null
 
     ;;
