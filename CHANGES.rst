@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.1.8 (unreleased)
+0.1.8 (2014-10-30)
 ------------------
 
 - Add backup scripts into debian.
