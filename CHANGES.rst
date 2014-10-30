@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.1.7 (unreleased)
+0.1.7 (2014-10-30)
 ------------------
 - Update post pre init path scripts
   [bsuttor]
