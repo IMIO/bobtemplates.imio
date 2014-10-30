@@ -4,7 +4,8 @@ Changelog
 0.1.8 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add backup scripts into debian.
+  [bsuttor]
 
 
 0.1.7 (2014-10-30)
