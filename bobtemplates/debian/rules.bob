@@ -71,6 +71,10 @@ install-core:
 	rm -r $(DEBIANCORE)/${INSTALLDIR}/bin/zeoserver
 	rm -r $(DEBIANCORE)/${INSTALLDIR}/bin/zeopack
 	rm -r $(DEBIANCORE)/${INSTALLDIR}/bin/repozo
+	rm -r $(DEBIANCORE)/${INSTALLDIR}/bin/backup
+	rm -r $(DEBIANCORE)/${INSTALLDIR}/bin/restore
+	rm -r $(DEBIANCORE)/${INSTALLDIR}/bin/snapshotbackup
+	rm -r $(DEBIANCORE)/${INSTALLDIR}/bin/snapshotrestore
 	rm $(DEBIANCORE)/${INSTALLDIR}/bin/instance1
 	rm $(DEBIANCORE)/${INSTALLDIR}/bin/instance2
 	rm $(DEBIANCORE)/${INSTALLDIR}/bin/instance3
@@ -92,9 +96,17 @@ install-zeo:
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/bin/zeoserver
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/bin/zeopack
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/bin/repozo
+	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/bin/backup
+	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/bin/restore
+	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/bin/snapshotbackup
+	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/bin/snapshotrestore
 	cp -ap $(BUILDDIR)/bin/zeoserver $(DEBIANZEO)/${INSTALLDIR}/bin
 	cp -ap $(BUILDDIR)/bin/zeopack $(DEBIANZEO)/${INSTALLDIR}/bin
 	cp -ap $(BUILDDIR)/bin/repozo $(DEBIANZEO)/${INSTALLDIR}/bin
+	cp -ap $(BUILDDIR)/bin/backup $(DEBIANZEO)/${INSTALLDIR}/bin
+	cp -ap $(BUILDDIR)/bin/restore $(DEBIANZEO)/${INSTALLDIR}/bin
+	cp -ap $(BUILDDIR)/bin/snapshotbackup $(DEBIANZEO)/${INSTALLDIR}/bin
+	cp -ap $(BUILDDIR)/bin/snapshotrestore $(DEBIANZEO)/${INSTALLDIR}/bin
 	cp -ap $(BUILDDIR)/parts/zeoserver $(DEBIANZEO)/${INSTALLDIR}/parts
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g $(DEBIANZEO)/${INSTALLDIR}/parts/zeoserver/bin/runzeo
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g $(DEBIANZEO)/${INSTALLDIR}/parts/zeoserver/bin/zeoctl
