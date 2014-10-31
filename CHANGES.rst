@@ -4,7 +4,7 @@ Changelog
 0.1.9 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add backups directory in zeo image.
 
 
 0.1.8 (2014-10-30)
