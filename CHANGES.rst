@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.1.10 (unreleased)
+0.1.10 (2014-10-31)
 -------------------
 
 - Change permission on backups folder into post install script.
