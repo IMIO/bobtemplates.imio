@@ -93,7 +93,6 @@ install-zeo:
 	mkdir -p $(DEBIANZEO)/${INSTALLDIR}/var/filestorage
 	mkdir -p $(DEBIANZEO)/${INSTALLDIR}/var/blobstorage
 	mkdir -p $(DEBIANZEO)/${INSTALLDIR}/var/backups
-	chmod -R 777 $(DEBIANZEO)/${INSTALLDIR}/var/backups
 	touch $(DEBIANZEO)/${INSTALLDIR}/zeo_add.conf
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/bin/zeoserver
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/bin/zeopack

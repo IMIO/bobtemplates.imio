@@ -4,13 +4,15 @@ Changelog
 0.1.10 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Change permission on backups folder into post install script.
+  [bsuttor]
 
 
 0.1.9 (2014-10-31)
 ------------------
 
 - Add backups directory in zeo image.
+  [bsuttor]
 
 
 0.1.8 (2014-10-30)
