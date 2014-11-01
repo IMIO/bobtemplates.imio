@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.1.11 (unreleased)
+0.1.11 (2014-11-01)
 -------------------
 
 - Do not create empty bin folder.
