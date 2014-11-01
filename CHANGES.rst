@@ -4,7 +4,8 @@ Changelog
 0.1.11 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Do not create empty bin folder.
+  [bsuttor]
 
 
 0.1.10 (2014-10-31)
