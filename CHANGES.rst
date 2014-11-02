@@ -4,7 +4,8 @@ Changelog
 0.1.14 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Move instance-debug into instance deb.
+  [bsuttor]
 
 
 0.1.13 (2014-11-02)
