@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.1.13 (unreleased)
+0.1.13 (2014-11-02)
 -------------------
 
 - Merge instance-debug into zeo egg.
