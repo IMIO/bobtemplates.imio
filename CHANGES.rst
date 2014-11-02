@@ -4,7 +4,8 @@ Changelog
 0.1.12 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Add rsync depends for zeo docker image.
+  [bsuttor]
 
 
 0.1.11 (2014-11-01)
