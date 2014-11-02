@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.1.12 (unreleased)
+0.1.12 (2014-11-02)
 -------------------
 
 - Add rsync depends for zeo docker image.
