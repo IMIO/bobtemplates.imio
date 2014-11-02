@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.1.14 (unreleased)
+0.1.14 (2014-11-02)
 -------------------
 
 - Move instance-debug into instance deb.
