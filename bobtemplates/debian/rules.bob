@@ -13,7 +13,6 @@ CURDIR    := $(shell pwd)
 BUILDDIR  := $(CURDIR)/tmp/imio-website
 DEBIANCORE    := $(CURDIR)/debian/$(PACKAGE)-core
 DEBIANINSTANCE    := $(CURDIR)/debian/$(PACKAGE)-instance
-DEBIANINSTANCEDEBUG    := $(CURDIR)/debian/$(PACKAGE)-instance-debug
 DEBIANZEO    := $(CURDIR)/debian/$(PACKAGE)-zeoserver
 INSTALLDIR   := /home/imio/imio-website
 
@@ -94,6 +93,7 @@ install-zeo:
 	mkdir -p $(DEBIANZEO)/${INSTALLDIR}/var/blobstorage
 	mkdir -p $(DEBIANZEO)/${INSTALLDIR}/var/backups
 	touch $(DEBIANZEO)/${INSTALLDIR}/zeo_add.conf
+	touch $(DEBIANZEO)/${INSTALLDIR}/zope_add_zeo.conf
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/bin/zeoserver
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/bin/zeopack
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/bin/repozo
@@ -113,6 +113,9 @@ install-zeo:
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g $(DEBIANZEO)/${INSTALLDIR}/parts/zeoserver/bin/zeoctl
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g $(DEBIANZEO)/${INSTALLDIR}/parts/zeoserver/etc/zeo.conf
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g $(DEBIANZEO)/${INSTALLDIR}/parts/zeoserver/etc/.eggs
+	cp -ap $(BUILDDIR)/bin/instance-debug $(DEBIANZEO)/${INSTALLDIR}/bin/instance-debug 
+	cp -ap $(BUILDDIR)/parts/instance-debug $(DEBIANZEO)/${INSTALLDIR}/parts/instance-debug
+	mkdir -p $(DEBIANZEO)/${INSTALLDIR}/var/instance-debug 
 
 install-instances:
 	mkdir -p $(DEBIANINSTANCE)/${INSTALLDIR} ; \
@@ -127,19 +130,9 @@ install-instances:
 	sed -i s/instance1/instance/g $(DEBIANINSTANCE)/${INSTALLDIR}/bin/instance ; \
 	sed -i s/instance1/instance/g $(DEBIANINSTANCE)/${INSTALLDIR}/parts/instance/etc/zope.conf ; \
 
-install-instance-debug:
-	mkdir -p $(DEBIANINSTANCEDEBUG)/${INSTALLDIR} ; \
-	mkdir -p $(DEBIANINSTANCEDEBUG)/${INSTALLDIR}/bin ; \
-        touch $(DEBIANINSTANCEDEBUG)/${INSTALLDIR}/zope_add_zeo.conf ; \
-	mkdir -p $(DEBIANINSTANCEDEBUG)/${INSTALLDIR}/parts ; \
-	mkdir -p $(DEBIANINSTANCEDEBUG)/${INSTALLDIR}/var/instance-debug ; \
-	mkdir -p $(DEBIANINSTANCEDEBUG)/${INSTALLDIR}/var/blobstorage ; \
-	mkdir -p $(DEBIANINSTANCEDEBUG)/${INSTALLDIR}/var/log ; \
-	cp -ap $(BUILDDIR)/bin/instance-debug $(DEBIANINSTANCEDEBUG)/${INSTALLDIR}/bin/instance-debug ; \
-	cp -ap $(BUILDDIR)/parts/instance-debug $(DEBIANINSTANCEDEBUG)/${INSTALLDIR}/parts/instance-debug ; \
 
 
-install: install-base install-core install-zeo install-instances install-instance-debug
+install: install-base install-core install-zeo install-instances
 	#rm -rf $(BUILDDIR)/
 
 binary-common:

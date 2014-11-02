@@ -4,7 +4,8 @@ Changelog
 0.1.13 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Merge instance-debug into zeo egg.
+  [bsuttor]
 
 
 0.1.12 (2014-11-02)
