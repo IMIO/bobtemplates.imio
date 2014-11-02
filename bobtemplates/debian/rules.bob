@@ -113,9 +113,6 @@ install-zeo:
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g $(DEBIANZEO)/${INSTALLDIR}/parts/zeoserver/bin/zeoctl
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g $(DEBIANZEO)/${INSTALLDIR}/parts/zeoserver/etc/zeo.conf
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g $(DEBIANZEO)/${INSTALLDIR}/parts/zeoserver/etc/.eggs
-	cp -ap $(BUILDDIR)/bin/instance-debug $(DEBIANZEO)/${INSTALLDIR}/bin/instance-debug 
-	cp -ap $(BUILDDIR)/parts/instance-debug $(DEBIANZEO)/${INSTALLDIR}/parts/instance-debug
-	mkdir -p $(DEBIANZEO)/${INSTALLDIR}/var/instance-debug 
 
 install-instances:
 	mkdir -p $(DEBIANINSTANCE)/${INSTALLDIR} ; \
@@ -129,6 +126,9 @@ install-instances:
 	cp -ap $(BUILDDIR)/parts/instance1 $(DEBIANINSTANCE)/${INSTALLDIR}/parts/instance ; \
 	sed -i s/instance1/instance/g $(DEBIANINSTANCE)/${INSTALLDIR}/bin/instance ; \
 	sed -i s/instance1/instance/g $(DEBIANINSTANCE)/${INSTALLDIR}/parts/instance/etc/zope.conf ; \
+	cp -ap $(BUILDDIR)/bin/instance-debug $(DEBIANINSTANCE)/${INSTALLDIR}/bin/instance-debug ; \
+	cp -ap $(BUILDDIR)/parts/instance-debug $(DEBIANINSTANCE)/${INSTALLDIR}/parts/instance-debug ; \
+	mkdir -p $(DEBIANINSTANCE)/${INSTALLDIR}/var/instance-debug ; \
 
 
 
