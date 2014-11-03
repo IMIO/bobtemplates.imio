@@ -10,12 +10,11 @@ export DH_OPTIONS
 INSTANCECOUNT := 1
 PACKAGE	  := imio-{{{ debian.name }}}-website
 CURDIR    := $(shell pwd)
-BUILDDIR  := $(CURDIR)/tmp/$(PACKAGE)
+BUILDDIR  := $(CURDIR)/tmp/imio-website
 DEBIANCORE    := $(CURDIR)/debian/$(PACKAGE)-core
 DEBIANINSTANCE    := $(CURDIR)/debian/$(PACKAGE)-instance
-DEBIANINSTANCEDEBUG    := $(CURDIR)/debian/$(PACKAGE)-instance-debug
 DEBIANZEO    := $(CURDIR)/debian/$(PACKAGE)-zeoserver
-INSTALLDIR   := /home/imio/$(PACKAGE)
+INSTALLDIR   := /home/imio/imio-website
 
 distribution := $(shell lsb_release -is)
 
@@ -56,8 +55,8 @@ install-base:
 	rm -fr ${BUILDDIR}/downloads
 
 install-core:
-	mkdir -p $(DEBIANCORE)/home/imio/$(PACKAGE)
-	mkdir -p $(DEBIANCORE)/home/imio/$(PACKAGE)/parts
+	mkdir -p $(DEBIANCORE)${INSTALLDIR}
+	mkdir -p $(DEBIANCORE)${INSTALLDIR}/parts
 	find ${BUILDDIR}/bin -executable -type f -exec sed -i s%${BUILDDIR}%${INSTALLDIR}%g {} \;
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/bin/instance1
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/parts/instance1/bin/interpreter
@@ -71,6 +70,10 @@ install-core:
 	rm -r $(DEBIANCORE)/${INSTALLDIR}/bin/zeoserver
 	rm -r $(DEBIANCORE)/${INSTALLDIR}/bin/zeopack
 	rm -r $(DEBIANCORE)/${INSTALLDIR}/bin/repozo
+	rm -r $(DEBIANCORE)/${INSTALLDIR}/bin/backup
+	rm -r $(DEBIANCORE)/${INSTALLDIR}/bin/restore
+	rm -r $(DEBIANCORE)/${INSTALLDIR}/bin/snapshotbackup
+	rm -r $(DEBIANCORE)/${INSTALLDIR}/bin/snapshotrestore
 	rm $(DEBIANCORE)/${INSTALLDIR}/bin/instance1
 	rm $(DEBIANCORE)/${INSTALLDIR}/bin/instance2
 	rm $(DEBIANCORE)/${INSTALLDIR}/bin/instance3
@@ -81,20 +84,30 @@ install-core:
 	find $(DEBIANCORE)/${INSTALLDIR} -name "*.pyo" -delete;
 
 install-zeo:
-	mkdir -p $(DEBIANZEO)/home/imio/$(PACKAGE)
+	mkdir -p $(DEBIANZEO)${INSTALLDIR}
 	mkdir -p $(DEBIANZEO)/${INSTALLDIR}/bin
 	mkdir -p $(DEBIANZEO)/${INSTALLDIR}/parts
 	mkdir -p $(DEBIANZEO)/${INSTALLDIR}/var/zeo
 	mkdir -p $(DEBIANZEO)/${INSTALLDIR}/var/log
 	mkdir -p $(DEBIANZEO)/${INSTALLDIR}/var/filestorage
 	mkdir -p $(DEBIANZEO)/${INSTALLDIR}/var/blobstorage
+	mkdir -p $(DEBIANZEO)/${INSTALLDIR}/var/backups
 	touch $(DEBIANZEO)/${INSTALLDIR}/zeo_add.conf
+	touch $(DEBIANZEO)/${INSTALLDIR}/zope_add_zeo.conf
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/bin/zeoserver
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/bin/zeopack
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/bin/repozo
+	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/bin/backup
+	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/bin/restore
+	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/bin/snapshotbackup
+	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/bin/snapshotrestore
 	cp -ap $(BUILDDIR)/bin/zeoserver $(DEBIANZEO)/${INSTALLDIR}/bin
 	cp -ap $(BUILDDIR)/bin/zeopack $(DEBIANZEO)/${INSTALLDIR}/bin
 	cp -ap $(BUILDDIR)/bin/repozo $(DEBIANZEO)/${INSTALLDIR}/bin
+	cp -ap $(BUILDDIR)/bin/backup $(DEBIANZEO)/${INSTALLDIR}/bin
+	cp -ap $(BUILDDIR)/bin/restore $(DEBIANZEO)/${INSTALLDIR}/bin
+	cp -ap $(BUILDDIR)/bin/snapshotbackup $(DEBIANZEO)/${INSTALLDIR}/bin
+	cp -ap $(BUILDDIR)/bin/snapshotrestore $(DEBIANZEO)/${INSTALLDIR}/bin
 	cp -ap $(BUILDDIR)/parts/zeoserver $(DEBIANZEO)/${INSTALLDIR}/parts
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g $(DEBIANZEO)/${INSTALLDIR}/parts/zeoserver/bin/runzeo
 	sed -i s%${BUILDDIR}%${INSTALLDIR}%g $(DEBIANZEO)/${INSTALLDIR}/parts/zeoserver/bin/zeoctl
@@ -113,20 +126,13 @@ install-instances:
 	cp -ap $(BUILDDIR)/parts/instance1 $(DEBIANINSTANCE)/${INSTALLDIR}/parts/instance ; \
 	sed -i s/instance1/instance/g $(DEBIANINSTANCE)/${INSTALLDIR}/bin/instance ; \
 	sed -i s/instance1/instance/g $(DEBIANINSTANCE)/${INSTALLDIR}/parts/instance/etc/zope.conf ; \
-
-install-instance-debug:
-	mkdir -p $(DEBIANINSTANCEDEBUG)/${INSTALLDIR} ; \
-	mkdir -p $(DEBIANINSTANCEDEBUG)/${INSTALLDIR}/bin ; \
-        touch $(DEBIANINSTANCEDEBUG)/${INSTALLDIR}/zope_add_zeo.conf ; \
-	mkdir -p $(DEBIANINSTANCEDEBUG)/${INSTALLDIR}/parts ; \
-	mkdir -p $(DEBIANINSTANCEDEBUG)/${INSTALLDIR}/var/instance-debug ; \
-	mkdir -p $(DEBIANINSTANCEDEBUG)/${INSTALLDIR}/var/blobstorage ; \
-	mkdir -p $(DEBIANINSTANCEDEBUG)/${INSTALLDIR}/var/log ; \
-	cp -ap $(BUILDDIR)/bin/instance-debug $(DEBIANINSTANCEDEBUG)/${INSTALLDIR}/bin/instance-debug ; \
-	cp -ap $(BUILDDIR)/parts/instance-debug $(DEBIANINSTANCEDEBUG)/${INSTALLDIR}/parts/instance-debug ; \
+	cp -ap $(BUILDDIR)/bin/instance-debug $(DEBIANINSTANCE)/${INSTALLDIR}/bin/instance-debug ; \
+	cp -ap $(BUILDDIR)/parts/instance-debug $(DEBIANINSTANCE)/${INSTALLDIR}/parts/instance-debug ; \
+	mkdir -p $(DEBIANINSTANCE)/${INSTALLDIR}/var/instance-debug ; \
 
 
-install: install-base install-core install-zeo install-instances install-instance-debug
+
+install: install-base install-core install-zeo install-instances
 	#rm -rf $(BUILDDIR)/
 
 binary-common:

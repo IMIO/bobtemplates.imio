@@ -1,7 +1,7 @@
 Source: imio-{{{ debian.name }}}-website
 Section: web
 Priority: extra
-Maintainer: Jean-François Roche <jfroche@affinitic.be>
+Maintainer: Benoit Suttor <benoit.suttor@imio.be>
 Build-Depends: debhelper (>= 7), python27 (>= 2.7.8-3)
 Standards-Version: 3.8.3
 Homepage: http://www.imio.be
@@ -13,15 +13,10 @@ Description: IMIO Plone 4 site
 
 Package: imio-{{{ debian.name }}}-website-zeoserver
 Architecture: any
-Depends: imio-{{{ debian.name }}}-website-core (= ${binary:Version})
+Depends: imio-{{{ debian.name }}}-website-core (= ${binary:Version}), rsync
 Description: IMIO Plone 4 site
 
 Package: imio-{{{ debian.name }}}-website-instance
 Architecture: any
 Depends: imio-{{{ debian.name }}}-website-core (= ${binary:Version}), memcached
 Description: IMIO Plone 4 site
-
-Package: imio-{{{ debian.name }}}-website-instance-debug
-Architecture: any
-Depends: imio-{{{ debian.name }}}-website-core (= ${binary:Version}), memcached
-Description: IMIO Plone 4 debug site

@@ -1,10 +1,85 @@
 Changelog
 =========
 
-0.1.4 (unreleased)
-------------------
+0.1.15 (unreleased)
+-------------------
 
 - Nothing changed yet.
+
+
+0.1.14 (2014-11-02)
+-------------------
+
+- Move instance-debug into instance deb.
+  [bsuttor]
+
+
+0.1.13 (2014-11-02)
+-------------------
+
+- Merge instance-debug into zeo egg.
+  [bsuttor]
+
+
+0.1.12 (2014-11-02)
+-------------------
+
+- Add rsync depends for zeo docker image.
+  [bsuttor]
+
+
+0.1.11 (2014-11-01)
+-------------------
+
+- Do not create empty bin folder.
+  [bsuttor]
+
+
+0.1.10 (2014-10-31)
+-------------------
+
+- Change permission on backups folder into post install script.
+  [bsuttor]
+
+
+0.1.9 (2014-10-31)
+------------------
+
+- Add backups directory in zeo image.
+  [bsuttor]
+
+
+0.1.8 (2014-10-30)
+------------------
+
+- Add backup scripts into debian.
+  [bsuttor]
+
+
+0.1.7 (2014-10-30)
+------------------
+- Update post pre init path scripts
+  [bsuttor]
+
+
+- Refactoring, use installdir instead of hard coded variable
+  [bsuttor]
+
+
+0.1.6 (2014-10-29)
+------------------
+
+- Change bad path error.
+  [bsuttor]
+
+
+
+0.1.4 (2014-10-29)
+------------------
+
+- Update debian templates: home container website folder is now generic
+  [bsuttor]
+
 
 
 0.1.3 (2014-10-16)
