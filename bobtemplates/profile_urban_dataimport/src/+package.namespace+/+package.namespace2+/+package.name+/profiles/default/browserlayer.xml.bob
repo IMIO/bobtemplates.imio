@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<layers>
+  <layer
+      name="{{{ profile.name }}}.urban.dataimport"
+      interface="{{{ profile.name }}}.urban.dataimport.interfaces.I{{{ profile.name.capitalize() }}}UrbanDataimportLayer"
+  />
+</layers>

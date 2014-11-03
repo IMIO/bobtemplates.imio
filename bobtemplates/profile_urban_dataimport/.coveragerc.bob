@@ -1,0 +1,7 @@
+[report]
+include =
+    src/{{{ profile.name }}}/*
+omit =
+    */test*
+    */upgrades/*
+
