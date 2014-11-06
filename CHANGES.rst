@@ -7,6 +7,9 @@ Changelog
 - Add minisites folder for instance.
   [bsuttor]
 
+- Add upgrade portals scripts.
+  [bsuttor]
+
 
 0.1.14 (2014-11-02)
 -------------------
