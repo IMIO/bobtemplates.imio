@@ -128,8 +128,9 @@ install-instances:
 	sed -i s/instance1/instance/g $(DEBIANINSTANCE)/${INSTALLDIR}/parts/instance/etc/zope.conf ; \
 	cp -ap $(BUILDDIR)/bin/instance-debug $(DEBIANINSTANCE)/${INSTALLDIR}/bin/instance-debug ; \
 	cp -ap $(BUILDDIR)/parts/instance-debug $(DEBIANINSTANCE)/${INSTALLDIR}/parts/instance-debug ; \
+	mkdir -p $(DEBIANINSTANCE)/${INSTALLDIR}/var/instance/minisites ; \
 	mkdir -p $(DEBIANINSTANCE)/${INSTALLDIR}/var/instance-debug ; \
-
+	mkdir -p $(DEBIANINSTANCE)/${INSTALLDIR}/var/instance-debug/minisites ; \
 
 
 install: install-base install-core install-zeo install-instances

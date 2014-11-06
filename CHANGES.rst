@@ -4,7 +4,8 @@ Changelog
 0.1.15 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Add minisites folder for instance.
+  [bsuttor]
 
 
 0.1.14 (2014-11-02)
