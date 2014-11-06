@@ -4,7 +4,8 @@ Changelog
 0.1.16 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Remove migration script from core.
+  [bsuttor]
 
 
 0.1.15 (2014-11-06)
