@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.1.16 (unreleased)
+0.1.16 (2014-11-06)
 -------------------
 
 - Remove migration script from core.
