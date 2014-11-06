@@ -10,6 +10,9 @@ Changelog
 - Add upgrade portals scripts.
   [bsuttor]
 
+- Add profile for urban
+  [fngaha]
+
 
 0.1.14 (2014-11-02)
 -------------------
