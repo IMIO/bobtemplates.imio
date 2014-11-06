@@ -190,3 +190,89 @@ class PloneTemplateTest(BaseTemplateTest):
                 self.project + '/.coveragerc',
             ]
         )
+
+
+class UrbanTemplateTest(BaseTemplateTest):
+    """Tests for the `Urban` template."""
+    template = ''
+    project = ''
+    answers_file = ''
+
+    def test_profile_urban_dataimport(self):
+        """Test the `profile_urban_dataimport` template.
+
+        Generate a project from a template, test which files were created
+        and run all tests in the generated package.
+        """
+        self.template = 'profile_urban_dataimport'
+        self.project = 'profile.urban.dataimport'
+        self.answers_file = 'test_answers_profile_urban_dataimport.ini'
+        self.maxDiff = None
+        result = self.create_template()
+        self.assertItemsEqual(
+            result.files_created.keys(),
+            [
+                self.project,
+                self.project + '/.coveragerc',
+                self.project + '/.gitignore',
+                self.project + '/.travis.yml',
+                self.project + '/bootstrap.py',
+                self.project + '/buildout.cfg',
+                self.project + '/Makefile',
+                self.project + '/MANIFEST.in',
+                self.project + '/README.rst',
+                self.project + '/setup.py',
+                self.project + '/travis.cfg',
+                self.project + '/buildout.d',
+                self.project + '/buildout.d/base.cfg',
+                self.project + '/buildout.d/dev.cfg',
+                self.project + '/buildout.d/sources.cfg',
+                self.project + '/buildout.d/versions.cfg',
+                self.project + '/docs',
+                self.project + '/docs/CHANGES.rst',
+                self.project + '/docs/CONTRIBUTORS.rst',
+                self.project + '/docs/glossary.rst',
+                self.project + '/docs/LICENSE.rst',
+                self.project + '/src',
+                self.project + '/src/profile',
+                self.project + '/src/profile/__init__.py',
+                self.project + '/src/profile/urban',
+                self.project + '/src/profile/urban/__init__.py',
+                self.project + '/src/profile/urban/dataimport',
+                self.project + '/src/profile/urban/dataimport/__init__.py',
+                self.project + '/src/profile/urban/dataimport/browser',
+                self.project + '/src/profile/urban/dataimport/browser/__init__.py',
+                self.project + '/src/profile/urban/dataimport/browser/configure.zcml',
+                self.project + '/src/profile/urban/dataimport/browser/overrides',
+                self.project + '/src/profile/urban/dataimport/browser/overrides/.gitkeep',
+                self.project + '/src/profile/urban/dataimport/browser/static',
+                self.project + '/src/profile/urban/dataimport/browser/static/.gitkeep',
+                self.project + '/src/profile/urban/dataimport/locales',
+                self.project + '/src/profile/urban/dataimport/locales/fr',
+                self.project + '/src/profile/urban/dataimport/locales/fr/LC_MESSAGES',
+                self.project + '/src/profile/urban/dataimport/locales/fr/LC_MESSAGES/profile.urban.dataimport.po',
+                self.project + '/src/profile/urban/dataimport/locales/profile.urban.dataimport.pot',
+                self.project + '/src/profile/urban/dataimport/locales/update.sh',
+                self.project + '/src/profile/urban/dataimport/profiles',
+                self.project + '/src/profile/urban/dataimport/profiles/default',
+                self.project + '/src/profile/urban/dataimport/profiles/default/browserlayer.xml',
+                self.project + '/src/profile/urban/dataimport/profiles/default/controlpanel.xml',
+                self.project + '/src/profile/urban/dataimport/profiles/default/import_steps.xml',
+                self.project + '/src/profile/urban/dataimport/profiles/default/profileurbandataimport_marker.txt',
+                self.project + '/src/profile/urban/dataimport/profiles/default/metadata.xml',
+                self.project + '/src/profile/urban/dataimport/profiles/testing',
+                self.project + '/src/profile/urban/dataimport/profiles/testing/metadata.xml',
+                self.project + '/src/profile/urban/dataimport/tests',
+                self.project + '/src/profile/urban/dataimport/tests/__init__.py',
+                self.project + '/src/profile/urban/dataimport/tests/robot',
+                self.project + '/src/profile/urban/dataimport/tests/robot/.gitkeep',
+                self.project + '/src/profile/urban/dataimport/tests/test_robot.py',
+                self.project + '/src/profile/urban/dataimport/tests/test_setup.py',
+                self.project + '/src/profile/urban/dataimport/configure.zcml',
+                self.project + '/src/profile/urban/dataimport/interfaces.py',
+                self.project + '/src/profile/urban/dataimport/settings.py',
+                self.project + '/src/profile/urban/dataimport/setuphandlers.py',
+                self.project + '/src/profile/urban/dataimport/testing.py',
+                self.project + '/src/profile/urban/dataimport/testing.zcml',
+            ]
+        )
