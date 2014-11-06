@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.1.15 (unreleased)
+0.1.15 (2014-11-06)
 -------------------
 
 - Add minisites folder for instance.
