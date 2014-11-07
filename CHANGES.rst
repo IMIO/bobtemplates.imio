@@ -1,10 +1,30 @@
 Changelog
 =========
 
-0.1.15 (unreleased)
+0.1.17 (unreleased)
 -------------------
 
 - Nothing changed yet.
+
+
+0.1.16 (2014-11-06)
+-------------------
+
+- Remove migration script from core.
+  [bsuttor]
+
+
+0.1.15 (2014-11-06)
+-------------------
+
+- Add minisites folder for instance.
+  [bsuttor]
+
+- Add upgrade portals scripts.
+  [bsuttor]
+
+- Add profile for urban
+  [fngaha]
 
 
 0.1.14 (2014-11-02)

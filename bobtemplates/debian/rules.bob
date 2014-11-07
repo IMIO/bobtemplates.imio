@@ -35,8 +35,8 @@ build:
 	rm -f $(BUILDDIR)/lib/python2.7/site-packages/easy-install.pth
 	rm -rf $(BUILDDIR)/lib/python2.7/site-packages/setuptools*
 	mkdir -p $(BUILDDIR)/eggs
-	cd $(BUILDDIR) && bin/python bootstrap.py buildout:eggs-directory=$(BUILDDIR)/eggs -c prod.cfg
-	cd $(BUILDDIR) && bin/buildout buildout:eggs-directory=$(BUILDDIR)/eggs -c prod.cfg
+	cd $(BUILDDIR) && bin/python bootstrap.py buildout:eggs-directory=$(BUILDDIR)/eggs -c docker.cfg
+	cd $(BUILDDIR) && bin/buildout buildout:eggs-directory=$(BUILDDIR)/eggs -c docker.cfg
 	echo $(DEBIANCORE)
 	touch build-stamp
 
@@ -79,6 +79,8 @@ install-core:
 	rm $(DEBIANCORE)/${INSTALLDIR}/bin/instance3
 	rm $(DEBIANCORE)/${INSTALLDIR}/bin/instance4
 	rm $(DEBIANCORE)/${INSTALLDIR}/bin/instance-debug
+	rm $(DEBIANCORE)/${INSTALLDIR}/bin/upgrade-portals
+	rm $(DEBIANCORE)/${INSTALLDIR}/bin/run-portal-upgrades
 	for i in $(find $(DEBIANCORE)/${INSTALLDIR}/parts/omelette -type l); do old_link=$(readlink -m $i); new_link=$(echo $old_link | sed  s%${BUILDDIR}/${INSTALLDIR}/); rm $i; ln -f -s $new_link $i; done
 	find $(DEBIANCORE)/${INSTALLDIR} -name "*.pyc" -delete;
 	find $(DEBIANCORE)/${INSTALLDIR} -name "*.pyo" -delete;
@@ -125,11 +127,16 @@ install-instances:
 	cp -ap $(BUILDDIR)/bin/instance1 $(DEBIANINSTANCE)/${INSTALLDIR}/bin/instance ; \
 	cp -ap $(BUILDDIR)/parts/instance1 $(DEBIANINSTANCE)/${INSTALLDIR}/parts/instance ; \
 	sed -i s/instance1/instance/g $(DEBIANINSTANCE)/${INSTALLDIR}/bin/instance ; \
+	cp -ap $(BUILDDIR)/bin/upgrade-portals $(DEBIANINSTANCE)/${INSTALLDIR}/bin ; \
+	cp -ap $(BUILDDIR)/bin/run-portal-upgrades $(DEBIANINSTANCE)/${INSTALLDIR}/bin ; \
+	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/bin/upgrade-portals ; \
+	sed -i s%${BUILDDIR}%${INSTALLDIR}%g ${BUILDDIR}/bin/run-portal-upgrades ; \
 	sed -i s/instance1/instance/g $(DEBIANINSTANCE)/${INSTALLDIR}/parts/instance/etc/zope.conf ; \
 	cp -ap $(BUILDDIR)/bin/instance-debug $(DEBIANINSTANCE)/${INSTALLDIR}/bin/instance-debug ; \
 	cp -ap $(BUILDDIR)/parts/instance-debug $(DEBIANINSTANCE)/${INSTALLDIR}/parts/instance-debug ; \
+	mkdir -p $(DEBIANINSTANCE)/${INSTALLDIR}/var/instance/minisites ; \
 	mkdir -p $(DEBIANINSTANCE)/${INSTALLDIR}/var/instance-debug ; \
-
+	mkdir -p $(DEBIANINSTANCE)/${INSTALLDIR}/var/instance-debug/minisites ; \
 
 
 install: install-base install-core install-zeo install-instances
