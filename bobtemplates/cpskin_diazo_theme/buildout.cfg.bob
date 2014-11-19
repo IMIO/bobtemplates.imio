@@ -4,6 +4,15 @@ extends =
     https://raw.githubusercontent.com/IMIO/cpskin.policy/master/versions.cfg
 package-name = {{{ package.namespace }}}.{{{ package.subnamespace }}}.{{{ package.name }}}
 
+develop = .
+
+parts +=
+    omelette
+
 index = http://pypi.imio.be/imio/imio/+simple/
 allow-hosts +=
     pypi.imio.be
+
+[omelette]
+recipe = collective.recipe.omelette
+eggs = ${instance:eggs}

@@ -4,7 +4,8 @@ Changelog
 0.1.17 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Include improvements / fixes done on already generated packages
+  [laulaz]
 
 
 0.1.16 (2014-11-06)
