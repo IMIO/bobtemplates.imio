@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.1.17 (unreleased)
+0.1.17 (2014-12-01)
 -------------------
 
 - Include improvements / fixes done on already generated packages
