@@ -7,6 +7,9 @@ Changelog
 - Include improvements / fixes done on already generated packages
   [laulaz]
 
+- Add migration instance into deb.
+  [bsuttor]
+
 
 0.1.16 (2014-11-06)
 -------------------
