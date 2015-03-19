@@ -4,7 +4,9 @@ Changelog
 0.1.18 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Fix randomly broken html (no head, ...)
+  See details in http://trac.imio.be/trac/ticket/10615
+  [laulaz]
 
 
 0.1.17 (2014-12-01)
