@@ -33,7 +33,7 @@ setup(
     url='http://pypi.python.org/pypi/{{{ profile.name }}}.urban.dataimport',
     license='GPL',
     packages=find_packages('src', exclude=['ez_setup']),
-    namespace_packages=['{{{ profile.name }}}', '{{ profile.name }}}.urban'],
+    namespace_packages=['imio'],
     package_dir={'': 'src'},
     include_package_data=True,
     zip_safe=False,
