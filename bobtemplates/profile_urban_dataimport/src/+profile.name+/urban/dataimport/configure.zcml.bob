@@ -14,9 +14,6 @@
     <!-- Include configuration for dependencies listed in setup.py -->
     <includeDependencies package="." />
 
-    <!-- Include sub-packages that use their own configure.zcml files. -->
-    <include package=".browser" />
-
     <!-- Register the installation GenericSetup extension profile -->
     <genericsetup:registerProfile
         name="default"
@@ -38,6 +35,12 @@
         for="Products.CMFPlone.interfaces.IPloneSiteRoot"
         class=".settings.{{{ profile.name.capitalize() }}}ImporterSettings"
         permission="zope2.View"
+    />
+
+    <adapter
+        for="dison.urban.dataimport.settings.{{{ profile.name.capitalize() }}}ImporterSettingsForm"
+        factory=".settings.{{{ profile.name.capitalize() }}}ImporterFromImportSettings"
+        provides="imio.urban.dataimport.{{{ profile.source }}}.interfaces.I{{{ profile.source.capitalize() }}}DataImporter"
     />
 
 </configure>
