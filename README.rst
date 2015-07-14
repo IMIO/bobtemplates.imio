@@ -26,11 +26,4 @@ Create your package
   bin/mrbob -O cpskin.diazotheme.theme1 bobtemplates:cpskin_diazo_theme
 
 
-Create your deb
----------------
-
-::
-
-  bin/mrbob -O debian bobtemplates:debian  
-
 See `mr.bob`_ documentation for further information : http://mrbob.readthedocs.org/en/latest/
