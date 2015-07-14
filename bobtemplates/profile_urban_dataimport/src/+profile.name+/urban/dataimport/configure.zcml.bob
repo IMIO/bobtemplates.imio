@@ -38,7 +38,7 @@
     />
 
     <adapter
-        for="dison.urban.dataimport.settings.{{{ profile.name.capitalize() }}}ImporterSettingsForm"
+        for="{{{ profile.name }}}.urban.dataimport.settings.{{{ profile.name.capitalize() }}}ImporterSettingsForm"
         factory=".settings.{{{ profile.name.capitalize() }}}ImporterFromImportSettings"
         provides="imio.urban.dataimport.{{{ profile.source }}}.interfaces.I{{{ profile.source.capitalize() }}}DataImporter"
     />

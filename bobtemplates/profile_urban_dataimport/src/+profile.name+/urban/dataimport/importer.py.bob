@@ -1,0 +1,12 @@
+# -*- coding: utf-8 -*-
+
+from zope.interface import implements
+
+from imio.urban.dataimport.{{{ profile.source }}}.importer import {{{ profile.source.capitalize() }}}DataImporter
+from {{{ profile.name }}}.urban.dataimport.interfaces import I{{{ profile.name.capitalize() }}}DataImporter
+
+
+class {{{ profile.name.capitalize() }}}DataImporter({{{ profile.source.capitalize() }}}DataImporter):
+    """ """
+
+    implements(I{{{ profile.name.capitalize() }}}DataImporter)

@@ -3,12 +3,12 @@
 
 from plone.theme.interfaces import IDefaultPloneLayer
 
-from imio.urban.dataimport.interfaces import IMapper, IUrbanImportSource, IUrbanDataImporter
+from imio.urban.dataimport.interfaces import IUrbanDataImporter
 
 
 class I{{{ profile.name.capitalize() }}}UrbanDataimportLayer(IDefaultPloneLayer):
-    """Marker interface that defines a Zope 3 browser layer."""
+    """ Marker interface that defines a Zope 3 browser layer."""
 
 
-class I{{{ profile.name }}}DataImporter(IUrbanDataImporter):
-    """ marker interface for Thuin Agorawin importer """
+class I{{{ profile.name.capitalize() }}}DataImporter(IUrbanDataImporter):
+    """ Marker interface for I{{{ profile.name.capitalize() }}} {{{ profile.source }}} importer """

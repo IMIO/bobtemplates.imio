@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 
-from imio.urban.dataimport.{{{ profile.source }}}.settings import {{{ profile.source.capitalize() }}}ImporterSettings
+from imio.urban.dataimport.browser.controlpanel import ImporterControlPanel
+from imio.urban.dataimport.browser.import_panel import ImporterSettings
+from imio.urban.dataimport.browser.import_panel import ImporterSettingsForm
+from imio.urban.dataimport.{{{ profile.source }}}.settings import {{{ profile.source.capitalize() }}}ImporterFromImportSettings
 
 
-class {{{ profile.name.capitalize() }}}ImporterSettings({{{ profile.source.capitalize() }}}ImporterSettings):
-    """
-    """
+class {{{ profile.name.capitalize() }}}ImporterSettingsForm(ImporterSettingsForm):
+    """ """
 
 class {{{ profile.name.capitalize() }}}ImporterSettings(ImporterSettings):
     """ """
@@ -17,7 +19,7 @@ class {{{ profile.name.capitalize() }}}ImporterControlPanel(ImporterControlPanel
     import_form = {{{ profile.name.capitalize() }}}ImporterSettings
 
 
-class {{{ profile.name.capitalize() }}}ImporterFromImportSettings(UrbawebImporterFromImportSettings):
+class {{{ profile.name.capitalize() }}}ImporterFromImportSettings({{{ profile.source.capitalize() }}}ImporterFromImportSettings):
     """ """
 
     def get_importer_settings(self):
