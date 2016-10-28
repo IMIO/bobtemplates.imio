@@ -1,0 +1,9 @@
+# Define each mount point as the following block
+
+<zodb_db {{{ profile.name }}}>
+  <filestorage>
+    path $FILESTORAGE/{{{ profile.name }}}.fs
+    blob-dir $BLOBSTORAGE-{{{ profile.name }}}
+  </filestorage>
+  mount-point /{{{ profile.name }}}
+</zodb_db>
