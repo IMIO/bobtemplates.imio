@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<object name="portal_less">
+
+ <stylesheet title="{{{ package.namespace }}}.{{{ package.subnamespace }}}.{{{ package.name }}} LESS Styles"
+    id="++theme++{{{ package.namespace }}}.{{{ package.subnamespace }}}.{{{ package.name }}}/less/styles.less"
+    media="all"
+    enabled="1"
+    rendering="link"
+    compression="none"
+    expression="python:here.restrictedTraverse('@@currentTheme')() == '{{{ package.namespace }}}.{{{ package.subnamespace }}}.{{{ package.name }}}'"
+    applyPrefix="True" />
+
+</object>

@@ -4,7 +4,8 @@ Changelog
 0.1.19 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- cpskin_diazo_theme template : Add LESS files
+  [laulaz]
 
 
 0.1.18 (2015-03-19)
