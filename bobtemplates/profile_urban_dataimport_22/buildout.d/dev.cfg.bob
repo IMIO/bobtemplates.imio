@@ -35,6 +35,7 @@ always-checkout = force
 auto-checkout = plone.app.referenceintegrity
                 Products.urban
                 imio.pm.locales
+                imio.pm.wsclient
                 collective.faceted.task
                 collective.wfadaptations
                 urban.vocabulary
