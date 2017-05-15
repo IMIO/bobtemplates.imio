@@ -1,12 +1,5 @@
 <?xml version="1.0"?>
 <import-steps>
 
- <import-step
-    id="{{{ profile.name }}}.urban.dataimport-{{{ profile.name }}}UrbawebImport"
-    handler="{{{ profile.name }}}.urban.dataimport.importer.import{{{ profile.name.capitalize() }}}Urbaweb"
-    title="Urbaweb import for {{{ profile.name.capitalize() }}}">
-  Urbaweb import for {{{ profile.name.capitalize() }}}
- </import-step>
-
 </import-steps>
 
