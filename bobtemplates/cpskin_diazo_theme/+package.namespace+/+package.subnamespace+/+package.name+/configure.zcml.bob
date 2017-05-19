@@ -18,7 +18,7 @@
         provides="Products.GenericSetup.interfaces.EXTENSION"
         />
 
-    <!-- CPSkin theme -->
+    <!-- Theme -->
     <plone:static directory="static" name="{{{ package.namespace }}}.{{{ package.subnamespace }}}.{{{ package.name }}}" type="theme" />
 
     <cmf:registerDirectory
