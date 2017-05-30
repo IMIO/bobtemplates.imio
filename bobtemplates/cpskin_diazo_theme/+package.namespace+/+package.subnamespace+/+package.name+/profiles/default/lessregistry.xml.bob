@@ -1,6 +1,16 @@
 <?xml version="1.0"?>
 <object name="portal_less">
 
+ <stylesheet title="{{{ package.namespace }}}.{{{ package.subnamespace }}}.{{{ package.name }}} LESS Variables"
+    id="++theme++{{{ package.namespace }}}.{{{ package.subnamespace }}}.{{{ package.name }}}/less/variables.less"
+    media="all"
+    enabled="1"
+    rendering="link"
+    compression="none"
+    expression="python:here.restrictedTraverse('@@currentTheme')() == '{{{ package.namespace }}}.{{{ package.subnamespace }}}.{{{ package.name }}}'"
+    applyPrefix="True"
+    insert-before="portal_resources/cpskin/variables.less" />
+
  <stylesheet title="{{{ package.namespace }}}.{{{ package.subnamespace }}}.{{{ package.name }}} LESS Styles"
     id="++theme++{{{ package.namespace }}}.{{{ package.subnamespace }}}.{{{ package.name }}}/less/styles.less"
     media="all"
@@ -8,6 +18,7 @@
     rendering="link"
     compression="none"
     expression="python:here.restrictedTraverse('@@currentTheme')() == '{{{ package.namespace }}}.{{{ package.subnamespace }}}.{{{ package.name }}}'"
-    applyPrefix="True" />
+    applyPrefix="True"
+    insert-before="portal_resources/cpskin/styles.less" />
 
 </object>

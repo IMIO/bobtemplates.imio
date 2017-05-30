@@ -4,6 +4,9 @@ Changelog
 0.1.19 (unreleased)
 -------------------
 
+- cpskin_diazo_theme template : Reflect changes for LESS themes & buildouts
+  [laulaz]
+
 - cpskin_diazo_theme template : Add LESS files
   [laulaz]
 
