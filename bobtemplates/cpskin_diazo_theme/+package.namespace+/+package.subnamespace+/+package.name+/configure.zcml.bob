@@ -21,10 +21,4 @@
     <!-- Theme -->
     <plone:static directory="static" name="{{{ package.namespace }}}.{{{ package.subnamespace }}}.{{{ package.name }}}" type="theme" />
 
-    <cmf:registerDirectory
-        name="skins"
-        directory="skins"
-        recursive="True"
-        />
-
 </configure>
