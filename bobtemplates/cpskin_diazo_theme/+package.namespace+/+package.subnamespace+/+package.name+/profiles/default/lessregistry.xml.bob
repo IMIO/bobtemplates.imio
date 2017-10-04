@@ -3,7 +3,7 @@
 
  <stylesheet title="{{{ package.namespace }}}.{{{ package.subnamespace }}}.{{{ package.name }}} LESS Variables"
     id="++theme++{{{ package.namespace }}}.{{{ package.subnamespace }}}.{{{ package.name }}}/less/variables.less"
-    media="all"
+    media=""
     enabled="1"
     rendering="link"
     compression="none"
